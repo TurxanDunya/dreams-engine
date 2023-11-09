@@ -6,7 +6,9 @@ extern Dream::Application* Dream::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("Dream Engine started!");
+	Dream::Log::Init();
+	DR_CORE_INFO("Dream Engine started!");
+	
 	auto app = Dream::CreateApplication();
 	app->Run();
 	delete app;
