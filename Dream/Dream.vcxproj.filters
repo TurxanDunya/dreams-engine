@@ -42,12 +42,18 @@
     <ClInclude Include="src\Dream\Events\MouseEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\drpch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Dream\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\drpch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Dream/Core.h"
-
 #include <string>
-#include <functional>
+#include <sstream>
+
+#include "Dream/Core.h"
 
 namespace Dream {
 

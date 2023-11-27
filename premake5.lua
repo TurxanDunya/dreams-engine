@@ -10,6 +10,12 @@ workspace "dreams-engine"
 
 outputdir = "%{cfg.buildcfg}-${cfg.system}-%{cfg.arhitecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Dream/vendor/GLFW/include"
+
+include "Dream/vendor/GLFW"
+
 project "Dream"
 	location "Dream"
 	kind "SharedLib"
@@ -17,6 +23,9 @@ project "Dream"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "drpch.h"
+	pchsource "Dream/src/hzpch.h"
 
 	files
 	{
@@ -26,8 +35,15 @@ project "Dream"
 
 	includedirs
 	{
-		"%{prj.name}/src"
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
