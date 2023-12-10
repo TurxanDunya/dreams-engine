@@ -8,6 +8,7 @@ namespace Dream {
 
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -16,12 +17,9 @@ namespace Dream {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		DR_TRACE(e);
-
-		while (true)
+		while (m_Running)
 		{
-
+			m_Window->OnUpdate();
 		}
 	}
 

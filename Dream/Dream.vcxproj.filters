@@ -35,6 +35,8 @@
       <Filter>Dream</Filter>
     </ClInclude>
     <ClInclude Include="src\drpch.h" />
+    <ClInclude Include="src\Dream\Window.h" />
+    <ClInclude Include="src\Dream\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Dream</Filter>
     </ClCompile>
     <ClCompile Include="src\drpch.cpp" />
+    <ClCompile Include="src\Dream\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
