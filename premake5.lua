@@ -8,7 +8,7 @@ workspace "dreams-engine"
 		"Dist"
 	}
 
-outputdir = "%{cfg.buildcfg}-${cfg.system}-%{cfg.arhitecture}"
+outputdir = "%{cfg.buildcfg}-${cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
@@ -59,22 +59,22 @@ project "Dream"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/")
 		}
 
 	filter "configurations:Debug"
-		define "DR_DEBUG"
+		defines { "DR_DEBUG" }
 		symbols "On"
 
 	filter "configurations:Release"
-		define "DR_RELEASE"
+		defines { "DR_RELEASE" }
 		optimize "On"
 
 	filter "configurations:Dist"
-		define "DR_DIST"
+		defines { "DR_DIST" }
 		optimize "On"
 
-project
+project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
@@ -110,13 +110,13 @@ project
 		}
 
 	filter "configurations:Debug"
-		define "DR_DEBUG"
+		defines { "DR_DEBUG" }
 		symbols "On"
 
 	filter "configurations:Release"
-		define "DR_RELEASE"
+		defines { "DR_RELEASE" }
 		optimize "On"
 
 	filter "configurations:Dist"
-		define "DR_DIST"
+		defines { "DR_DIST" }
 		optimize "On"
