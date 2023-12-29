@@ -59,6 +59,11 @@ namespace Dream {
 		m_Data.VSync = enabled;
 	}
 
+	bool WindowsWindow::IsVSync() const
+	{
+		return m_Data.VSync;
+	}
+
 	WindowsWindow::~WindowsWindow()
 	{
 		Shutdown();

@@ -2,6 +2,7 @@
 
 #include <string>
 #include <sstream>
+#include <functional>
 
 #include "Dream/Core.h"
 

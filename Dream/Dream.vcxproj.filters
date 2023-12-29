@@ -7,6 +7,12 @@
     <Filter Include="Dream\Events">
       <UniqueIdentifier>{52AC5FDB-3E0F-EF7F-E794-2736D3D6BA02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dream\Platform">
+      <UniqueIdentifier>{42101A4E-2EDE-0D54-1772-7E7A03DFE9B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dream\Platform\Windows">
+      <UniqueIdentifier>{7CDC4C1D-68D6-756F-5143-0C803DDCDBDB}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Dream.h" />
@@ -34,9 +40,13 @@
     <ClInclude Include="src\Dream\Log.h">
       <Filter>Dream</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dream\Platform\Windows\WindowsWindow.h">
+      <Filter>Dream\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dream\Window.h">
+      <Filter>Dream</Filter>
+    </ClInclude>
     <ClInclude Include="src\drpch.h" />
-    <ClInclude Include="src\Dream\Window.h" />
-    <ClInclude Include="src\Dream\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream\Application.cpp">
@@ -45,7 +55,9 @@
     <ClCompile Include="src\Dream\Log.cpp">
       <Filter>Dream</Filter>
     </ClCompile>
+    <ClCompile Include="src\Dream\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Dream\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\drpch.cpp" />
-    <ClCompile Include="src\Dream\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

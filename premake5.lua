@@ -20,12 +20,14 @@ project "Dream"
 	location "Dream"
 	kind "SharedLib"
 	language "C++"
-
+	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	staticruntime "on"
+
 	pchheader "drpch.h"
-	pchsource "Dream/src/hzpch.h"
+	pchsource "Dream/src/drpch.h"
 
 	files
 	{
@@ -43,7 +45,8 @@ project "Dream"
 	links
 	{
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
@@ -59,7 +62,7 @@ project "Dream"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox/")
+			'{COPY} "%{cfg.buildtarget.relpath}" "../bin/' .. outputdir .. '/Sandbox/"'
 		}
 
 	filter "configurations:Debug"
@@ -78,6 +81,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
