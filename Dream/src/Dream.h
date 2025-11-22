@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "dream/Application.h"
+#include "Dream/Layer.h"
 #include "dream/Log.h"
 
 // ---Entry Point---------------------------------
