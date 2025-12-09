@@ -23,7 +23,7 @@ namespace Dream {
 		{
 			for (Layer* layer: m_LayerStack)
 			{
-				layer->OnUpdate();
+				//layer->OnUpdate();
 			}
 
 			m_Window->OnUpdate();
@@ -39,7 +39,7 @@ namespace Dream {
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
-			(*--it)->OnEvent(event);
+			//(*--it)->OnEvent(event);
 			if (event.Handled())
 			{
 				break;

@@ -1,5 +1,6 @@
 workspace "dreams-engine"
 	architecture "x64"
+	toolset "v143"
 
 	configurations
 	{

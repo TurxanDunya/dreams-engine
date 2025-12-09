@@ -8,7 +8,7 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	/*void OnUpdate() override
 	{
 		DR_INFO("ExampleLayer::OnUpdate");
 	}
@@ -16,7 +16,7 @@ public:
 	void OnEvent(Dream::Event& event) override
 	{
 		DR_TRACE("{0}", event);
-	}
+	}*/
 };
 
 class Sandbox : public Dream::Application
