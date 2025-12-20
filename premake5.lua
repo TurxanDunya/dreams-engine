@@ -28,7 +28,7 @@ project "Dream"
 	staticruntime "on"
 
 	pchheader "drpch.h"
-	pchsource "Dream/src/drpch.h"
+	pchsource "Dream/src/drpch.cpp"
 
 	files
 	{
