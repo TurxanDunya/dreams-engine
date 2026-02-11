@@ -23,7 +23,7 @@ namespace Dream {
 		{
 			for (Layer* layer: m_LayerStack)
 			{
-				//layer->OnUpdate();
+				layer->OnUpdate();
 			}
 
 			m_Window->OnUpdate();
@@ -37,9 +37,9 @@ namespace Dream {
 
 		DR_CORE_TRACE("{0}", event);
 
-		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
 		{
-			//(*--it)->OnEvent(event);
+			(*--it)->OnEvent(event);
 			if (event.Handled())
 			{
 				break;

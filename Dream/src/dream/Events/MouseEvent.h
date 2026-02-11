@@ -20,7 +20,7 @@ namespace Dream {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(KeyPressed);
+		EVENT_CLASS_TYPE(MouseMoved);
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
 
 	private:
@@ -43,7 +43,7 @@ namespace Dream {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(KeyPressed);
+		EVENT_CLASS_TYPE(MouseScrolled);
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
 
 	private:
@@ -78,6 +78,7 @@ namespace Dream {
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed);
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
 	};
 
 	class DREAM_API MouseButtonReleasedEvent : public MouseButtonEvent
