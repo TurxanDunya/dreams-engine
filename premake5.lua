@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Dream/vendor/GLFW/include"
+IncludeDir["Glad"] = "Dream/vendor/Glad/include"
 
 include "Dream/vendor/GLFW"
+include "Dream/vendor/Glad"
 
 project "Dream"
 	location "Dream"
@@ -40,12 +42,14 @@ project "Dream"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
@@ -58,7 +62,8 @@ project "Dream"
 		defines
 		{
 			"DR_PLATFORM_WINDOWS",
-			"DR_BUILD_DLL"
+			"DR_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
